@@ -1,0 +1,36 @@
+Currency Exchange Service:
+URL: http://localhost:8000/currency-exchange/from/USD/to/INR
+
+Response Structure
+{
+   "id":10001,
+   "from":"USD",
+   "to":"INR",
+   "conversionMultiple":65.00,
+   "environment":"8000 instance-id"
+}
+
+SUITABLE YOUTUBE VIDEO TO CREATE INSTANCES OF JAVA APPLICATION:
+https://youtu.be/pRb1io4Ewuc?si=B_0318e-YxIDKMOW
+
+Currency Conversion Service:
+URL: http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
+
+Response Structure
+{
+   "id":10001,
+   "from":"USD",
+   "to":"INR",
+   "conversionMultiple":65.00,
+   "quantity": 10,
+   "totalCalculatedAmount": 650.00
+   "environment":"8100 instance-id"
+}
+
+
+Eureka: http://localhost:8761/CURRENCY-EXCHANGE/
+
+
+API GATEWAY
+http://localhost:8765/CURRENCY-EXCHANGE/
+http://localhost:8765/CURRENCY-EXCHANGE/currency-exchange/from/USD/to/INR
