@@ -50,6 +50,20 @@
 		</dependency>
 
 
+		<!--Resilience4j - Circuit Breaker framework-->
+		<dependency>
+			<groupId>io.github.resilience4j</groupId>
+			<artifactId>resilience4j-spring-boot2</artifactId>
+		</dependency>
+		<!--Resilience4j - Circuit Breaker framework-->
+
+		<!--SPRING AOP - To implement Circuit Breaker-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<!--SPRING AOP - To implement Circuit Breaker-->
+
 		<!--NETFLIX EUREKA CLIENT - TO CONNECT WITH NAMING SERVER-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
