@@ -1,31 +1,69 @@
+-------------------------- API GATEWAY --------------------------
+http://localhost:8765/CURRENCY-EXCHANGE/currency-exchange/from/USD/to/IND
 
+Above request will provide response as below:
+{
+    "id": 1001,
+    "conversionMultiple": 10,
+    "environment": "8001",
+    "from": "USD",
+    "to": "IND"
+}
+-----------------------------------------
+http://localhost:8765/CURRENCY-CONVERSION/currency-conversion-feign/from/USD/to/IND/quantity/250
+
+Above request will give response as below:
+{
+    "id": 1001,
+    "currency_from": "USD",
+    "currency_to": "IND",
+    "quantity": 10,
+    "conversionMultiple": 250,
+    "totalCalculatedAmount": 2500,
+    "environment": "8001 feign"
+}
+- So from now we can call any service with eureka with API Gateway.
+- If we are implementing authentication, we can use API Gateway here as only authenticated persons are allowed by using API Gateway in microservices.
+--------------------------
 
 Initial
 
-- http://localhost:8765/CURRENCY-EXCHANGE/currency-exchange/from/USD/to/INR
+- http://localhost:8765/CURRENCY-EXCHANGE/currency-exchange/from/USD/to/IND
 
-- http://localhost:8765/CURRENCY-CONVERSION/currency-conversion/from/USD/to/INR/quantity/10
+- http://localhost:8765/CURRENCY-CONVERSION/currency-conversion/from/USD/to/IND/quantity/10
 
-- http://localhost:8765/CURRENCY-CONVERSION/currency-conversion-feign/from/USD/to/INR/quantity/10
+- http://localhost:8765/CURRENCY-CONVERSION/currency-conversion-feign/from/USD/to/IND/quantity/250
 
 
+In the above urls, CURRENCY-EXCHANGE or CURRENCY-CONVERSION seems ugly. To fix that, add below line to application.properties
+spring.cloud.gateway.discovery.locator.lower-case-service-id=true
 
 Lower Case
 
-- http://localhost:8765/currency-exchange/currency-exchange/from/USD/to/INR
+- http://localhost:8765/currency-exchange/currency-exchange/from/USD/to/IND
 
-- http://localhost:8765/currency-conversion/currency-conversion/from/USD/to/INR/quantity/10
+- http://localhost:8765/currency-conversion/currency-conversion/from/USD/to/IND/quantity/10
 
-- http://localhost:8765/currency-conversion/currency-conversion-feign/from/USD/to/INR/quantity/10
+- http://localhost:8765/currency-conversion/currency-conversion-feign/from/USD/to/IND/quantity/10
 
-
+Building Custom Routes:
+1) Create configuration file.
 
 Custom Routes
 
-- http://localhost:8765/currency-exchange/from/USD/to/INR
+- http://localhost:8765/currency-exchange/from/USD/to/IND
 
-- http://localhost:8765/currency-conversion/from/USD/to/INR/quantity/10
+Above request will provide response as below:
+{
+    "id": 1001,
+    "conversionMultiple": 10,
+    "environment": "8001",
+    "from": "USD",
+    "to": "IND"
+}
 
-- http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
+- http://localhost:8765/currency-conversion/from/USD/to/IND/quantity/10
 
-- http://localhost:8765/currency-conversion-new/from/USD/to/INR/quantity/10
+- http://localhost:8765/currency-conversion-feign/from/USD/to/IND/quantity/10
+
+- http://localhost:8765/currency-conversion-new/from/USD/to/IND/quantity/10
