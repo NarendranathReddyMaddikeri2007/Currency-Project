@@ -1,0 +1,36 @@
+================ Tech Stack Implemented ================
+Basics of Spring Boot REST API:
+- Web Service
+- SOAP Vs REST API
+- HTTP Methods and HTTP Status
+- Dependencies
+  # Spring Web
+  # Spring Data JPA
+  # H2 Database
+  # Spring Dev Tools
+  # Feign Client
+  # Eureka
+  # Spring Cloud Gateway
+  # Resilience4j
+
+- Implemented Concepts:
+  # Custom Response Structure
+  # Custom Exception Handling
+  # Validations
+  # Versioning
+  # Content Negotiation (Internalization)
+  # HATEOAS
+  # Filtering (Static and Dynamic Filtering)
+  # Monitoring
+  # Documentation (Swagger)
+  # HAL Explorer
+  # Naming Server (Eureka)
+  # Load Balancing (Feign Client & Eureka)
+  # API Gateway (Spring Cloud Gateway)
+  # Circuit Breaker (Resilience4j)
+
+- Implemented Projects:
+1. Currency Exchange Service
+2. Currency Conversion
+3. API Gateway
+4. Naming Server
